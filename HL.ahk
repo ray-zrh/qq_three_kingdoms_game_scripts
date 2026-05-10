@@ -3,14 +3,16 @@
 #Include MacroCore.ahk
 
 ; ========================================================
-; YX宏 - 游侠通用版 (纯配置声明)
-; 特点：定时大招队列 + S/D/F/Q 技能循环 + A键自动普攻
+; HL宏 - 唤灵专版 (纯配置声明)
+; 特点：定时大招队列(E/R/T) + S/D/F/Q 技能循环 + A键自动普攻
 ; ========================================================
 cfg := MacroConfig()
-cfg.Title := "YX宏"
-cfg.ToggleKey := "2"
-cfg.FocusKey := "0"
-cfg.BasicPanel := { Text: "🏹 仅开启 [ A ] 普攻", DefaultVal: 0 }
+cfg.Title := "HL宏"
+cfg.ToggleKey := "4"
+cfg.FocusKey := "="
+cfg.PreferredX := -2550
+cfg.PreferredY := 800
+cfg.BasicPanel := { Text: "🐉 仅开启 [ A ] 普攻", DefaultVal: 0 }
 cfg.CycleSkills := [{ Name: "S", Key: "s", DefaultDur: 0.7 }, { Name: "D", Key: "d", DefaultDur: 8 }, { Name: "F", Key: "f",
     DefaultDur: 1 }, { Name: "Q", Key: "q", DefaultDur: 1.5 }
 ]
