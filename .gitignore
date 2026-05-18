@@ -24,3 +24,10 @@ Temporary Items
 
 # vscode
 .vscode
+
+# docs
+/doc
+/docs
+
+# query script
+/info_query

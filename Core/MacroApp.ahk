@@ -61,12 +61,15 @@ class GameMacroAppBase {
         if (IsInteger(toggleKey)) {
             try Hotkey(">+Numpad" . toggleKey, ObjBindMethod(this.SyncManager, "OnToggleSync"), "S")
         }
+        ; 注册通用的 RShift + 5 全局同步开关 (添加 ~ 允许跨进程透传)
+        Hotkey("~>+5", ObjBindMethod(this.SyncManager, "OnToggleSync"), "S")
+        try Hotkey("~>+Numpad5", ObjBindMethod(this.SyncManager, "OnToggleSync"), "S")
         HotIf()
 
-        ; 4. 注册 "5" 键用于切换鼠标同步模式 (解绑条件限制，允许随时切换开关状态)
+        ; 4. 注册 "6" 键用于切换鼠标同步模式 (解绑条件限制，允许随时切换开关状态)
         HotIf((*) => this._IsGameWindowActive() && this._HotkeysEnabled)
-        Hotkey("~5", ObjBindMethod(this.SyncManager, "OnToggleMouseSync"), "S")
-        try Hotkey("~Numpad5", ObjBindMethod(this.SyncManager, "OnToggleMouseSync"), "S")
+        Hotkey("~6", ObjBindMethod(this.SyncManager, "OnToggleMouseSync"), "S")
+        try Hotkey("~Numpad6", ObjBindMethod(this.SyncManager, "OnToggleMouseSync"), "S")
         HotIf()
 
         ; 5. 左 Shift 的状态拦截 (传递给 SyncManager)
